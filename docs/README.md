@@ -1414,6 +1414,17 @@ tags: 歌单标签
 
 **调用例子 :** `/song/url?id=33894312` `/song/url?id=405998841,33894312`
 
+### 获取音乐 url - 新版
+
+说明 : 使用注意事项同上
+
+**必选参数 :** `id` : 音乐 id
+ `level`: 播放音质等级, 分为 `standard` => `标准`, `exhigh`=>`极高`, `lossless`=>`无损`, `hires`=>`Hi-Res`
+
+**接口地址 :** `/song/url/v1`
+
+**调用例子 :** `/song/url/v1?id=33894312&level=exhigh` `/song/url/v1?id=405998841,33894312&level=lossless`
+
 ### 音乐是否可用
 
 说明: 调用此接口,传入歌曲 id, 可获取音乐是否可用,返回 `{ success: true, message: 'ok' }` 或者 `{ success: false, message: '亲爱的,暂无版权' }`
@@ -2807,7 +2818,7 @@ type : 地区
 
 **可选参数 :**
 
-`limit` : 返回数量 , 默认为 200
+`limit` : 返回数量 , 默认为 30
 
 `offset` : 偏移数量，用于分页 , 如 :( 页数 -1)\*200, 其中 200 为 limit 的值 , 默认为 0
 
